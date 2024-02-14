@@ -10,6 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -19,27 +20,26 @@ public class WishlistController {
     private WishlistService wishlistService;
 
     @GetMapping(value = "/get", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity getUserWishlist(Authentication authentication) {
+    public ResponseEntity<List<WishListDto>> getUserWishlist(Authentication authentication) {
         // Retrieve user from Users
-        // Use WishlistItemService to get user's wishlist
         var username = authentication.getName();
-        List<WishListDto> wishlistItemsList=wishlistService.getUserWishlist(username);
-        return new ResponseEntity(wishlistItemsList,HttpStatus.OK);
+        List<WishListDto> wishlistItemsList = wishlistService.getUserWishlist(username);
+        return new ResponseEntity(wishlistItemsList, HttpStatus.OK);
     }
 
     @PostMapping("/add")
-    public ResponseEntity addItemToWishlist(Authentication authentication, @RequestBody WishlistItems wishlistItem) {
+    public ResponseEntity<String> addItemToWishlist(Authentication authentication, @RequestBody WishlistItems wishlistItem) {
         // Add item to user's wishlist
         String username = authentication.getName();
-        String result=wishlistService.addItems(wishlistItem,username);
-        return new ResponseEntity(result,HttpStatus.OK);
+        String result = wishlistService.addItems(wishlistItem, username);
+        return new ResponseEntity(result, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{productId}")
-    public ResponseEntity removeItemFromWishlist(Authentication authentication,@PathVariable Integer productId) throws Exception {
+    public ResponseEntity<String> removeItemFromWishlist(Authentication authentication, @PathVariable Integer productId) throws Exception {
         // Remove item from user's wishlist
         String username = authentication.getName();
-        String result=wishlistService.removeItems(username,productId);
-        return new ResponseEntity(result,HttpStatus.OK);
+        String result = wishlistService.removeItems(username, productId);
+        return new ResponseEntity(result, HttpStatus.OK);
     }
 }

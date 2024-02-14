@@ -5,6 +5,7 @@ import ecommerce.solutions.XindusTrade.EcommerceEntity.Users;
 import ecommerce.solutions.XindusTrade.EcommerceEntity.WishlistItems;
 import ecommerce.solutions.XindusTrade.EcommerceRepository.UserRepository;
 import ecommerce.solutions.XindusTrade.EcommerceRepository.WishlistRepository;
+import ecommerce.solutions.XindusTrade.Exception.UserNotFoundException;
 import ecommerce.solutions.XindusTrade.Exception.WishlistItemNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,7 +39,7 @@ public class WishlistService {
             return wishList;
         } else {
             // If user not found, return null or throw an exception based on your requirement
-            throw new RuntimeException("username is invalid, please enter the correct username") ;
+            throw new UserNotFoundException("please enter the correct username");
         }
     }
 
@@ -54,7 +55,7 @@ public class WishlistService {
             userRepository.save(users); // Save the user entity to reflect changes
             return "Wishlist item has been added to your wishlist";
         } else {
-            throw new RuntimeException("userId is invalid,please enter the correct userId"); // Handle case where user is not found
+            throw new UserNotFoundException("please enter the correct username"); // Handle case where user is not found
         }
     }
 
@@ -74,7 +75,7 @@ public class WishlistService {
                 throw new WishlistItemNotFoundException("Wishlist item not found"); // Handle case where wishlist item is not found
             }
         } else {
-            throw new Exception("userId is invalid,please enter the correct userId"); // Handle case where user is not found
+            throw new UserNotFoundException("please enter the correct username"); // Handle case where user is not found
         }
     }
 }
