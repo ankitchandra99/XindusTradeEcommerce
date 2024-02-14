@@ -44,6 +44,8 @@ Request Body: JSON object containing user credentials (e.g., username/email, pas
 
 Response: Upon successful authentication, "User login successfully!..."
 
+## For all the below end point users have to add Basic Authentication Details i.e username and password used for signup.
+![Screenshot 2024-02-14 225205](https://github.com/ankitchandra99/XindusTradeEcommerce/assets/126271360/7d3302d8-76a3-4768-8a6a-2e78b1d9efad)
 
 
 ## Get User Wishlist Methods:
