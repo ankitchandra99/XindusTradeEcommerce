@@ -6,19 +6,18 @@
   3.Install Dependencies
 
   4.Configure Application Properties:
-    * I am using MySQL database,so you have to create a database with name "ecommerce".
-    * We have to add database username and password in application.properties file.
+    I am using MySQL database,so you have to create a database with name "ecommerce".
+     
+    We have to add database username and password in application.properties file.
     
     spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce?createTableIfNotExists=true
     spring.datasource.username=root
     spring.datasource.password=xxxxxxxx
     spring.jpa.hibernate.ddl-auto=update
   
-  5.Run the Application:
+  5.Run the Application.
   
-  6.Access the Application:
-   #If the application has a web interface, specify the URL where the user can access it (e.g.,http://localhost:8080).
-
+  6.Access the Application using Postman.
 
 
 ## API Details:
@@ -26,7 +25,7 @@
 ## Sign-Up API:
 
 HTTP Method: POST
-Endpoint: /api/signup
+Endpoint: /user/signup
 
 Description: Allows users to create a new account by providing their username, email, password, and other relevant information.
 
@@ -37,7 +36,7 @@ Response: A message indicating the success or failure of the sign-up process.
 ## Login API:
 HTTP Method: POST
 
-Endpoint: /api/login
+Endpoint: /user/login
 
 Description: Allows registered users to log in to their account by providing their username/email and password.
 
