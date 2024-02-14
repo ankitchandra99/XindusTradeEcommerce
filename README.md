@@ -99,7 +99,9 @@ Verifies that the controller method throws a UserNotFoundException when an inval
 
 Test Steps:
 1.Set up the mock authentication to return an invalid username.
+
 2.Execute the controller method to get the wishlist for the authenticated user.
+
 3.Verify that a UserNotFoundException is thrown.
 ## shouldReturnEmptyWishlist_whenGetWishList
 Description:
@@ -107,7 +109,9 @@ Tests that the controller returns an empty wishlist when a valid user with no wi
 
 Test Steps:
 1.Mock the UserRepository to return a user with no wishlist items.
+
 2.Execute the controller method to get the wishlist for the authenticated user.
+
 3.Verify that the response contains an empty wishlist.
 ## shouldReturnUserNotFound_whenAddWishList
 Description:
@@ -115,6 +119,7 @@ Ensures that the controller method throws a UserNotFoundException when attemptin
 
 Test Steps:
 1.Execute the controller method to add a wishlist item for the authenticated user.
+
 2.Verify that a UserNotFoundException is thrown.
 ## shouldReturnSuccess_whenAddWishList
 Description:
@@ -122,7 +127,9 @@ Tests that the controller successfully adds a wishlist item for a valid user.
 
 Test Steps:
 1.Mock the UserRepository to return a valid user.
+
 2.Execute the controller method to add a wishlist item for the authenticated user.
+
 3.Verify that the response indicates the item was added successfully.
 ## shouldReturnUserNotFoundException_whenDeleteWishList
 Description:
@@ -130,6 +137,7 @@ Verifies that the controller method throws a UserNotFoundException when attempti
 
 Test Steps:
 1.Execute the controller method to delete a wishlist item for the authenticated user.
+
 2.Verify that a UserNotFoundException is thrown.
 ## shouldReturnWishListNotFound_whenDeleteWistList
 Description:
@@ -137,7 +145,9 @@ Ensures that the controller method throws a WishlistItemNotFoundException when a
 
 Test Steps:
 1.Mock the UserRepository to return a valid user.
+
 2.Execute the controller method to delete a wishlist item for the authenticated user.
+
 3.Verify that a WishlistItemNotFoundException is thrown.
 ## shouldDeleteWistListSuccessfully
 Description:
@@ -145,9 +155,14 @@ Tests that the controller successfully deletes an existing wishlist item for a v
 
 Test Steps:
 1.Mock the UserRepository to return a valid user.
+
 2.Mock the WishlistRepository to return an existing wishlist item.
+
 3.Execute the controller method to delete the wishlist item for the authenticated user.
+
 4.Verify that the response indicates the item was deleted successfully.
+
+
 These test cases cover various scenarios related to accessing, adding, and deleting wishlist items for users in the system. They ensure that the WishlistController behaves as expected under different conditions.
 
 
