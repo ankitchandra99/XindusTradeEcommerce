@@ -6,8 +6,8 @@ Setup Instructions:
 3.Install Dependencies
 
 4.Configure Application Properties:
-  # I am using MySQL database,so you have to create a database with name "ecommerce".
-  # We have to add database username and password in application.properties file.
+  * I am using MySQL database,so you have to create a database with name "ecommerce".
+  * We have to add database username and password in application.properties file.
   
   spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce?createTableIfNotExists=true
   spring.datasource.username=root
