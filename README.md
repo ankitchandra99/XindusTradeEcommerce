@@ -98,6 +98,7 @@ Description:
 Verifies that the controller method throws a UserNotFoundException when an invalid user attempts to access their wishlist.
 
 Test Steps:
+
 1.Set up the mock authentication to return an invalid username.
 
 2.Execute the controller method to get the wishlist for the authenticated user.
@@ -108,6 +109,7 @@ Description:
 Tests that the controller returns an empty wishlist when a valid user with no wishlist items requests their wishlist.
 
 Test Steps:
+
 1.Mock the UserRepository to return a user with no wishlist items.
 
 2.Execute the controller method to get the wishlist for the authenticated user.
@@ -118,6 +120,7 @@ Description:
 Ensures that the controller method throws a UserNotFoundException when attempting to add a wishlist item for an invalid user.
 
 Test Steps:
+
 1.Execute the controller method to add a wishlist item for the authenticated user.
 
 2.Verify that a UserNotFoundException is thrown.
@@ -126,6 +129,7 @@ Description:
 Tests that the controller successfully adds a wishlist item for a valid user.
 
 Test Steps:
+
 1.Mock the UserRepository to return a valid user.
 
 2.Execute the controller method to add a wishlist item for the authenticated user.
@@ -136,6 +140,7 @@ Description:
 Verifies that the controller method throws a UserNotFoundException when attempting to delete a wishlist item for an invalid user.
 
 Test Steps:
+
 1.Execute the controller method to delete a wishlist item for the authenticated user.
 
 2.Verify that a UserNotFoundException is thrown.
@@ -144,6 +149,7 @@ Description:
 Ensures that the controller method throws a WishlistItemNotFoundException when attempting to delete a non-existent wishlist item.
 
 Test Steps:
+
 1.Mock the UserRepository to return a valid user.
 
 2.Execute the controller method to delete a wishlist item for the authenticated user.
@@ -154,6 +160,7 @@ Description:
 Tests that the controller successfully deletes an existing wishlist item for a valid user.
 
 Test Steps:
+
 1.Mock the UserRepository to return a valid user.
 
 2.Mock the WishlistRepository to return an existing wishlist item.
