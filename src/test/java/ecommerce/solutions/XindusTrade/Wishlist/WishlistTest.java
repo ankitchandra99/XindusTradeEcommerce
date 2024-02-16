@@ -48,7 +48,7 @@ public class WishlistControllerTest {
     }
 
     @Test
-    public void shouldReturnEmptyWishlist_whenGetWishList() {
+    public void shouldReturnWishlist_whenGetWishList() {
         //given
         Mockito.when(userRepository.findByUsername(Mockito.anyString())).thenReturn(Optional.of(getDummyUsers()));
 
