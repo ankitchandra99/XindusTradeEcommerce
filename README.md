@@ -105,7 +105,7 @@ Test Steps:
 2.Execute the controller method to get the wishlist for the authenticated user.
 
 3.Verify that a UserNotFoundException is thrown.
-## shouldReturnEmptyWishlist_whenGetWishList
+## shouldReturnWishlist_whenGetWishList
 Description:
 Tests that the controller returns an empty wishlist when a valid user with no wishlist items requests their wishlist.
 
