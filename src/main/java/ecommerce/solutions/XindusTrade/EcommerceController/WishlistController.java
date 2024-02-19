@@ -19,7 +19,7 @@ public class WishlistController {
     @Autowired
     private WishlistService wishlistService;
 
-    @GetMapping(value = "/get", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping("/get")
     public ResponseEntity<List<WishListDto>> getUserWishlist(Authentication authentication) {
         // Retrieve user from Users
         var username = authentication.getName();
